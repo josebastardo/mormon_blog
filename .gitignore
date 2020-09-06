@@ -1,0 +1,12 @@
+*.pyc
+*~
+__pycache__
+myvenv
+
+/static
+.DS_Store
+
+*.py[co]
+*.sw[po]
+
+

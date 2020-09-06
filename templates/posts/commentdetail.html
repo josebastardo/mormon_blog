@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+ {% block content %}
+  <div class="container"> 
+
+ <hr> 
+      
+    
+
+              <p class="card-text">{{comment.post}}  {{comment.post.post|safe}</p>
+            <h5 class="mt-0">{{comment.user.username}}       </h5>
+               
+
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+{% endblock %}

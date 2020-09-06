@@ -1,0 +1,9 @@
+{% for field in form %}
+ {% if field.name != "photo" %}
+   <!-- display regular fields -->
+   {{ field.label_tag }}{{ field }}
+ {% else %}
+   <!-- display the user photo -->
+   <img src="{{ MEDIA_URL }}{{ field.url }}" />
+ {% endif %}
+{% endfor %}

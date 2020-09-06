@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+ <hr>
+ <hr>
+
+{% if object_list %}
+<h2> Capítulos</h2>
+ <hr>
+<ul>
+{% for post in object_list %}
+<li>
+ <a href="{% url 'posts:detail' post.url%}"> {{ post.title }} </a>
+</li>
+
+{% endfor %}
+</ul>
+
+{% else%}
+
+</h3> Lo sentimos, lo que buscas no está disponible  </h3>
+
+
+{% endif %}
+ <hr>
+ <hr>
+
+{% endblock content %}

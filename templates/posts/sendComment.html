@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load markdown_extras %}
+
+<title>{% block title %} Helamán {% endblock %}</title>
+
+
+{% block sidebar %}
+
+
+{% endblock sidebar %}
+
+
+  <!-- contenido principal -->
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+
+
+
+
+<ol class="breadcrumb">
+<li><a href="#"> Home--> </a></li>
+<li><a href="#"> Support--></a></li>
+<li class="active"> Documentation</li>
+</ol>
+
+<br />
+<h2> Deja un Comentario de lo aprendido!!</h2>
+  <br>
+<form action="" method="POST">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+ <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+</form>
+
+
+<br>
+
+
+
+
+{% for comment in comments %}
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            {{ comment.name }}
+            <span class=" text-muted font-weight-normal">
+              {{ comment.created_on }}
+            </span>
+          </p>
+          {{ comment.text | linebreaks }}
+        </div>
+        {% endfor %}
+
+  
+
+
+
+ 
+
+
+
+                </div>
+            </div>
+          
+        </div>
+
+
+
+
+
+
+{% endblock content %}
+
+
